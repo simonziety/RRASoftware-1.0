@@ -13,6 +13,9 @@ using OxyPlot.Axes;
 using OxyPlot.Series;
 using OxyPlot.WindowsForms;
 
+using System.Drawing;
+using System.Net.Http.Headers;
+
 namespace RotaryAxisAnalyzer
 {
     
@@ -26,15 +29,15 @@ namespace RotaryAxisAnalyzer
         {
             InitializeComponent();
             timer1.Start();
-        }
 
-        private void NameLabel_Click(object sender, EventArgs e)
-        {
+            //buttonImageDesign
+            
+            plotBtn.ImageIndex = 1;
+            importDataBtn.ImageIndex = 2;
+            dataStorageBtn.ImageIndex = 3;
+            settingsBtn.ImageIndex = 4;
 
-        }
 
-        private void TitleMenuPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -1553,22 +1556,12 @@ namespace RotaryAxisAnalyzer
             // plotting
             plotView = new PlotView();
             plotView.Dock = DockStyle.Fill;
-            graphPanel.Controls.Add(plotView);
+            //graphPanel.Controls.Add(plotView);
 
             // send parameter tp PlotModel
             var model = CreatePlotModel(t, channel1, channel2, channel3);
             plotView.Model = model;
-        }
-        //lklkasdw
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateLabel_Click(object sender, EventArgs e)
-        {
-            
         }
 
         //Date Time
@@ -1576,11 +1569,6 @@ namespace RotaryAxisAnalyzer
         {
             DateTime dateTime = DateTime.Now;
             this.DateLabel.Text = dateTime.ToString();
-        }
-
-        private void OscPlotView_Click(object sender, EventArgs e)
-        {
-
         }
 
         private PlotModel CreatePlotModel(double[] x, double[] y1, double[] y2, double[] y3)
@@ -1629,21 +1617,35 @@ namespace RotaryAxisAnalyzer
 
         }
 
-        private void MainTablePanel_Paint(object sender, PaintEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void plotView_Click(object sender, EventArgs e)
+        //Btn Event
+        private void plotBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ImportDataLabel_Click(object sender, EventArgs e)
+        private void importDataBtn_Click_1(object sender, EventArgs e)
         {
-            importDataDialog.Filter = "Excel|*.xls;*.xlsx";
+            importDataDialog.Filter = "Excel|*.csv|Data Files|*.lda";
+            //"Text files (*.txt)|*.txt|All files (*.*)|*.*"'
             importDataDialog.ShowDialog();
+        }
+
+        private void dataStorageBtn_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Btn Design
+
     }
 }
