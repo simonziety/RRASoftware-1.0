@@ -150,6 +150,8 @@
             this.plotBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.plotBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.plotBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plotBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plotBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.plotBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.plotBtn.IconColor = System.Drawing.Color.Black;
             this.plotBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -177,6 +179,8 @@
             this.importDataBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.importDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.importDataBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.importDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.importDataBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.importDataBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.importDataBtn.IconColor = System.Drawing.Color.Black;
             this.importDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -194,6 +198,8 @@
             this.dataStorageBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dataStorageBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataStorageBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataStorageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataStorageBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dataStorageBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.dataStorageBtn.IconColor = System.Drawing.Color.Black;
             this.dataStorageBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -211,6 +217,8 @@
             this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.settingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingsBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.settingsBtn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.settingsBtn.IconColor = System.Drawing.Color.Black;
             this.settingsBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;

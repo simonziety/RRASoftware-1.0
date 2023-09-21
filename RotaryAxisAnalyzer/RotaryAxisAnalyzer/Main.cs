@@ -23,6 +23,7 @@ namespace RotaryAxisAnalyzer
     {
         
         int flags = -1;
+        Timer delayTimer;
         private PlotView plotView;
 
         public Main_Form()
@@ -31,14 +32,31 @@ namespace RotaryAxisAnalyzer
             timer1.Start();
 
             //buttonImageDesign
-            
             plotBtn.ImageIndex = 1;
             importDataBtn.ImageIndex = 2;
             dataStorageBtn.ImageIndex = 3;
             settingsBtn.ImageIndex = 4;
 
+            //drop shadow
+            plotBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(plotBtn, e);
+            importDataBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(importDataBtn, e);
+            dataStorageBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(dataStorageBtn, e);
+            settingsBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(settingsBtn, e);
+
+            delayTimer = new Timer();
+            delayTimer.Interval = 1000;
+            delayTimer.Tick += (sender, e) => ShowSettingsForm();
+            delayTimer.Start();
 
 
+        }
+
+        private void ShowSettingsForm()
+        {
+            delayTimer.Stop();
+            Settings ST = new Settings();
+            ST.StartPosition = FormStartPosition.CenterScreen;
+            ST.Show();
         }
 
         private void Main_Form_Load(object sender, EventArgs e)
@@ -1605,13 +1623,7 @@ namespace RotaryAxisAnalyzer
         private void SettingLabel_Click(object sender, EventArgs e)
         {
 
-            /*flags *= -1;
-
-            if (flags == 1)
-                MainTablePanel.Hide();
-            else
-                MainTablePanel.Show();*/
-            Setting STS = new Setting();
+            Settings STS = new Settings();
             STS.Show();
             this.Hide();
 
@@ -1642,7 +1654,9 @@ namespace RotaryAxisAnalyzer
 
         private void settingsBtn_Click(object sender, EventArgs e)
         {
-
+            Settings ST = new Settings();
+            ST.StartPosition = FormStartPosition.CenterScreen;
+            ST.Show();
         }
 
         //Btn Design
