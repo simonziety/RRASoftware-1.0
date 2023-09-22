@@ -39,7 +39,7 @@ namespace RotaryAxisAnalyzer
 
         }
 
-        private void Plot_Load(object sender,  EventArgs e)
+        private void Plot_Form_Load(object sender,  EventArgs e)
         {
             // create arrays
             double[] channel1 =

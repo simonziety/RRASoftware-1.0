@@ -65,12 +65,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoSet.Designer.cs">
+      <DependentUpon>AutoSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChannelButtonDecoration.cs" />
     <Compile Include="DataStorage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataStorage.Designer.cs">
       <DependentUpon>DataStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralSetting.Designer.cs">
+      <DependentUpon>GeneralSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="PanelDecoration.cs">
       <SubType>Component</SubType>
@@ -106,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="DataStorage.resx">
       <DependentUpon>DataStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralSetting.resx">
+      <DependentUpon>GeneralSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
