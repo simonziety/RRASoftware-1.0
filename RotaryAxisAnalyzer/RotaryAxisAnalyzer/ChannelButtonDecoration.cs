@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +9,13 @@ using System.Windows.Forms;
 
 namespace RotaryAxisAnalyzer
 {
-    internal class BtnDecoration : Button
+    internal class ChannelButtonDecoration
     {
- 
-        public static void ButtonDecoration(object sender, PaintEventArgs e)
+        public static void ChannelBtnDecoration(object sender, PaintEventArgs e)
         {
             Control control = (Control)sender;
 
-            int radius = 15;
+            int radius = 10;
             GraphicsPath roundedPath = new GraphicsPath();
             roundedPath.AddArc(0, 0, radius * 2, radius * 2, 180, 90);
             roundedPath.AddArc(control.Width - 2 * radius, 0, radius * 2, radius * 2, 270, 90);

@@ -34,6 +34,7 @@
             this.importDataDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.exitBtn = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DateLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -43,7 +44,10 @@
             this.importDataBtn = new FontAwesome.Sharp.IconButton();
             this.dataStorageBtn = new FontAwesome.Sharp.IconButton();
             this.settingsBtn = new FontAwesome.Sharp.IconButton();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -65,6 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.mainPanel, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -79,12 +84,31 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.exitBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(100, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1164, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exitBtn.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            this.exitBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exitBtn.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.exitBtn.IconColor = System.Drawing.Color.Snow;
+            this.exitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.exitBtn.IconSize = 45;
+            this.exitBtn.Location = new System.Drawing.Point(1114, 0);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(50, 45);
+            this.exitBtn.TabIndex = 0;
+            this.exitBtn.TabStop = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // panel2
             // 
@@ -109,7 +133,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
             this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 45);
@@ -142,7 +166,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(100, 636);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // plotBtn
             // 
@@ -161,7 +185,7 @@
             this.plotBtn.Size = new System.Drawing.Size(74, 74);
             this.plotBtn.TabIndex = 0;
             this.plotBtn.UseVisualStyleBackColor = false;
-            this.plotBtn.Click += new System.EventHandler(this.plotBtn_Click);
+            this.plotBtn.Click += new System.EventHandler(this.plotBtn_Click_1);
             // 
             // imageList1
             // 
@@ -190,7 +214,7 @@
             this.importDataBtn.Size = new System.Drawing.Size(74, 74);
             this.importDataBtn.TabIndex = 1;
             this.importDataBtn.UseVisualStyleBackColor = false;
-            this.importDataBtn.Click += new System.EventHandler(this.importDataBtn_Click_1);
+            this.importDataBtn.Click += new System.EventHandler(this.importDataBtn_Click);
             // 
             // dataStorageBtn
             // 
@@ -228,7 +252,19 @@
             this.settingsBtn.Size = new System.Drawing.Size(74, 74);
             this.settingsBtn.TabIndex = 3;
             this.settingsBtn.UseVisualStyleBackColor = false;
-            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click_1);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackgroundImage = global::RotaryAxisAnalyzer.Properties.Resources.attocube_logo;
+            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(110, 55);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1144, 616);
+            this.mainPanel.TabIndex = 3;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // Main_Form
             // 
@@ -242,10 +278,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "a";
             this.Text = "Attocube";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.exitBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -260,13 +297,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel mainPanel;
+        private FontAwesome.Sharp.IconPictureBox exitBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private FontAwesome.Sharp.IconButton plotBtn;
-        private System.Windows.Forms.Label DateLabel;
         private FontAwesome.Sharp.IconButton importDataBtn;
         private FontAwesome.Sharp.IconButton dataStorageBtn;
         private FontAwesome.Sharp.IconButton settingsBtn;
-        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

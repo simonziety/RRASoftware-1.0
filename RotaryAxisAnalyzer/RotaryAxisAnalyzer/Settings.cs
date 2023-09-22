@@ -22,16 +22,24 @@ namespace RotaryAxisAnalyzer
             //Btn Design
             gsBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(gsBtn, e);
             asBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(asBtn, e);
+            applyBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(applyBtn, e);
+            cancelBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(cancelBtn, e);
+
             asBtn.FlatStyle = FlatStyle.Flat;
             asBtn.FlatAppearance.BorderSize = 0;
+
             gsBtn.FlatStyle = FlatStyle.Flat;
             gsBtn.FlatAppearance.BorderSize = 0;
 
-            GeneralSettingPanel = new PanelDecoration();
-            GeneralSettingPanel.BackColor = Color.LightBlue; // Set your desired background color
-            GeneralSettingPanel.Padding = new Padding(10); // Set padding if needed
-            GeneralSettingPanel.Dock = DockStyle.Fill; // Optional: Dock the panel to fill the parent container
-            Controls.Add(GeneralSettingPanel); // Add the panel to the form
+            applyBtn.FlatStyle = FlatStyle.Flat;
+            applyBtn.FlatAppearance.BorderSize = 0;
+
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.FlatAppearance.BorderSize = 0;
+
+            //text input design
+            machineNoInput.Multiline = false;
+            machineNoInput.Height = 50;
 
         }
 
