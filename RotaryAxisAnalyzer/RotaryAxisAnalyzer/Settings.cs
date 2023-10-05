@@ -17,7 +17,7 @@ namespace RotaryAxisAnalyzer
             InitializeComponent();
 
             //Panel Design
-            
+
 
             //Btn Design
             gsBtn.Paint += (sender, e) => BtnDecoration.ButtonDecoration(gsBtn, e);
@@ -37,10 +37,15 @@ namespace RotaryAxisAnalyzer
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.FlatAppearance.BorderSize = 0;
 
-            //text input design
-            machineNoInput.Multiline = false;
-            machineNoInput.Height = 50;
+        }
+        public void loadform(Form formToLoad)
+        {
+            settingPanel.Controls.Clear();
 
+            formToLoad.TopLevel = false;
+            formToLoad.Dock = DockStyle.Fill;
+
+            settingPanel.Controls.Add(formToLoad);
         }
 
         private void gsBtn_Click(object sender, EventArgs e)
@@ -49,6 +54,9 @@ namespace RotaryAxisAnalyzer
             gsBtn.ForeColor = Color.Snow;
             asBtn.BackColor = Color.Snow;
             asBtn.ForeColor = Color.FromArgb(49, 49, 49);
+
+            GeneralST generalForm = new GeneralST();
+            loadform(generalForm);
         }
 
         private void asBtn_Click(object sender, EventArgs e)
@@ -57,6 +65,16 @@ namespace RotaryAxisAnalyzer
             asBtn.ForeColor = Color.Snow;
             gsBtn.BackColor = Color.Snow;
             gsBtn.ForeColor = Color.FromArgb(49, 49, 49);
+
+            AutoSetST AutoSet = new AutoSetST();
+            loadform(AutoSet);
+        }
+
+
+
+        private void settingPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -20,7 +20,6 @@ namespace RotaryAxisAnalyzer
     public partial class Main_Form : Form
     {
         
-        int flags = -1;
         Timer delayTimer;
         private PlotView plotView;
 
@@ -120,6 +119,7 @@ namespace RotaryAxisAnalyzer
             importDataDialog.Filter = "Excel|*.csv|Data Files|*.lda";
             //"Text files (*.txt)|*.txt|All files (*.*)|*.*"'
             importDataDialog.ShowDialog();
+            importDataDialog.Title = "Select a Text File";
         }
 
 

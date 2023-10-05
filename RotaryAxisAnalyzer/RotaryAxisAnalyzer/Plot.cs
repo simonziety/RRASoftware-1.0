@@ -1617,7 +1617,7 @@ namespace RotaryAxisAnalyzer
             // plotting
             plotView = new PlotView();
             plotView.Dock = DockStyle.Fill;
-            OscGraphPanel.Controls.Add(plotView);
+            OsilloscopePanel.Controls.Add(plotView);
 
             // send parameter tp PlotModel
             var model = CreatePlotModel(t, channel1_plot, channel2_plot, channel3_plot);

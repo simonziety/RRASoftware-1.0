@@ -256,15 +256,11 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.BackgroundImage = global::RotaryAxisAnalyzer.Properties.Resources.attocube_logo;
-            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(110, 55);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(10);
+            this.mainPanel.Location = new System.Drawing.Point(103, 48);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1144, 616);
+            this.mainPanel.Size = new System.Drawing.Size(1158, 630);
             this.mainPanel.TabIndex = 3;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // Main_Form
             // 
@@ -299,13 +295,13 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Panel mainPanel;
         private FontAwesome.Sharp.IconPictureBox exitBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private FontAwesome.Sharp.IconButton plotBtn;
         private FontAwesome.Sharp.IconButton importDataBtn;
         private FontAwesome.Sharp.IconButton dataStorageBtn;
         private FontAwesome.Sharp.IconButton settingsBtn;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
 

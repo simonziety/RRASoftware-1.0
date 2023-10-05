@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace RotaryAxisAnalyzer
 {
-    public partial class GeneralSetting : Form
+    public partial class AutoSetST : Form
     {
-        public GeneralSetting()
+        public AutoSetST()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,6 +45,8 @@
             this.plotView1 = new OxyPlot.WindowsForms.PlotView();
             this.rrsTab = new System.Windows.Forms.TabPage();
             this.fftTab = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.OsilloscopePanel = new System.Windows.Forms.Panel();
             this.mainTabControl.SuspendLayout();
             this.oscTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -55,6 +57,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.OscGraphPanel.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -63,10 +66,10 @@
             this.mainTabControl.Controls.Add(this.rrsTab);
             this.mainTabControl.Controls.Add(this.fftTab);
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTabControl.Location = new System.Drawing.Point(0, 0);
+            this.mainTabControl.Location = new System.Drawing.Point(3, 3);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(1340, 570);
+            this.mainTabControl.Size = new System.Drawing.Size(1334, 564);
             this.mainTabControl.TabIndex = 0;
             // 
             // oscTab
@@ -76,7 +79,7 @@
             this.oscTab.Location = new System.Drawing.Point(4, 22);
             this.oscTab.Name = "oscTab";
             this.oscTab.Padding = new System.Windows.Forms.Padding(3);
-            this.oscTab.Size = new System.Drawing.Size(1332, 544);
+            this.oscTab.Size = new System.Drawing.Size(1326, 538);
             this.oscTab.TabIndex = 0;
             this.oscTab.Text = "Osilloscope";
             // 
@@ -93,7 +96,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1326, 538);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1320, 532);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -103,7 +106,7 @@
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(130, 518);
+            this.panel1.Size = new System.Drawing.Size(130, 512);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -121,7 +124,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(130, 518);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(130, 512);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // zChannelBtn
@@ -189,7 +192,7 @@
             this.panelDecoration1.Location = new System.Drawing.Point(160, 10);
             this.panelDecoration1.Margin = new System.Windows.Forms.Padding(10);
             this.panelDecoration1.Name = "panelDecoration1";
-            this.panelDecoration1.Size = new System.Drawing.Size(1156, 518);
+            this.panelDecoration1.Size = new System.Drawing.Size(1150, 512);
             this.panelDecoration1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -204,7 +207,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1156, 518);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1150, 512);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -221,16 +224,16 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1146, 60);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1140, 60);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(385, 0);
+            this.label1.Location = new System.Drawing.Point(383, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 60);
+            this.label1.Size = new System.Drawing.Size(374, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Osilloscope";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -240,7 +243,7 @@
             this.pictureBox1.BackgroundImage = global::RotaryAxisAnalyzer.Properties.Resources.Legend;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(1029, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1023, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(117, 60);
@@ -249,12 +252,13 @@
             // 
             // OscGraphPanel
             // 
+            this.OscGraphPanel.Controls.Add(this.OsilloscopePanel);
             this.OscGraphPanel.Controls.Add(this.plotView1);
             this.OscGraphPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OscGraphPanel.Location = new System.Drawing.Point(15, 85);
             this.OscGraphPanel.Margin = new System.Windows.Forms.Padding(15);
             this.OscGraphPanel.Name = "OscGraphPanel";
-            this.OscGraphPanel.Size = new System.Drawing.Size(1126, 418);
+            this.OscGraphPanel.Size = new System.Drawing.Size(1120, 412);
             this.OscGraphPanel.TabIndex = 1;
             // 
             // plotView1
@@ -263,7 +267,7 @@
             this.plotView1.Location = new System.Drawing.Point(0, 0);
             this.plotView1.Name = "plotView1";
             this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotView1.Size = new System.Drawing.Size(1126, 418);
+            this.plotView1.Size = new System.Drawing.Size(1120, 412);
             this.plotView1.TabIndex = 0;
             this.plotView1.Text = "plotView1";
             this.plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
@@ -276,7 +280,7 @@
             this.rrsTab.Location = new System.Drawing.Point(4, 22);
             this.rrsTab.Name = "rrsTab";
             this.rrsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.rrsTab.Size = new System.Drawing.Size(1332, 544);
+            this.rrsTab.Size = new System.Drawing.Size(1326, 538);
             this.rrsTab.TabIndex = 1;
             this.rrsTab.Text = "Radial - Rotating Sensitive";
             // 
@@ -285,9 +289,32 @@
             this.fftTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.fftTab.Location = new System.Drawing.Point(4, 22);
             this.fftTab.Name = "fftTab";
-            this.fftTab.Size = new System.Drawing.Size(1332, 544);
+            this.fftTab.Size = new System.Drawing.Size(1326, 538);
             this.fftTab.TabIndex = 2;
             this.fftTab.Text = "FFT";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.mainTabControl, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1340, 570);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // OsilloscopePanel
+            // 
+            this.OsilloscopePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OsilloscopePanel.Location = new System.Drawing.Point(0, 0);
+            this.OsilloscopePanel.Name = "OsilloscopePanel";
+            this.OsilloscopePanel.Size = new System.Drawing.Size(1120, 412);
+            this.OsilloscopePanel.TabIndex = 1;
             // 
             // Plot
             // 
@@ -295,9 +322,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
             this.ClientSize = new System.Drawing.Size(1340, 570);
-            this.Controls.Add(this.mainTabControl);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.Name = "Plot";
             this.Text = "Plot";
+            this.Load += new System.EventHandler(this.Plot_Form_Load);
             this.mainTabControl.ResumeLayout(false);
             this.oscTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -308,6 +336,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.OscGraphPanel.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -330,5 +359,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel OscGraphPanel;
         private OxyPlot.WindowsForms.PlotView plotView1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Panel OsilloscopePanel;
     }
 }

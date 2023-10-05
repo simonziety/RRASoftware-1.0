@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RotaryAxisAnalyzer
 {
-    public partial class AutoSet : Form
+    public partial class Info : Form
     {
-        public AutoSet()
+        public Info()
         {
             InitializeComponent();
         }
