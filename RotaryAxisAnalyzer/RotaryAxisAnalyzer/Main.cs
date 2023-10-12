@@ -7,12 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
-using OxyPlot;
-using OxyPlot.Axes;
-using OxyPlot.Legends;
-using OxyPlot.Series;
 using OxyPlot.WindowsForms;
+using OxyPlot.Axes;
 
 namespace RotaryAxisAnalyzer
 {
@@ -75,7 +73,21 @@ namespace RotaryAxisAnalyzer
 
         private void Main_Form_Load(object sender, EventArgs e)
         {
+            createSaveDataFolder();
 
+        }
+
+        private void createSaveDataFolder()
+        {
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string folderName = "SaveDataRRA";
+
+            string folderPath = Path.Combine(documentsPath, folderName);
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
         }
 
         //Date Time
@@ -114,12 +126,116 @@ namespace RotaryAxisAnalyzer
             loadform(dataStorageForm);
         }
 
+        private double[][] ReadXYZDataFromCSV(string filePath)
+        {
+            try
+            {
+                List<double> xData = new List<double>();
+                List<double> yData = new List<double>();
+                List<double> zData = new List<double>();
+
+                bool isFirstLine = true;
+
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+
+                        if (isFirstLine)
+                        {
+                            isFirstLine = false;
+                            continue;
+                        }
+
+                        string[] values = line.Split(',');
+                        Console.WriteLine($"Number of values in this line: {values.Length}");
+                        if (values.Length >= 3)
+                        {
+
+                            string xValueString = values[0].Trim().Replace("\"", "");
+                            if (double.TryParse(values[0].Trim(), out double xValue))
+                            {
+                                xData.Add(xValue);
+                                Console.WriteLine("xValue: " + xValue);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed to parse xValue.");
+                            }
+
+                            if (double.TryParse(values[1].Trim(), out double yValue))
+                                yData.Add(yValue);
+
+                            if (double.TryParse(values[2].Trim(), out double zValue))
+                                zData.Add(zValue);
+
+                        }
+                    }
+                }
+                
+                return new double[][] { xData.ToArray(), yData.ToArray(), zData.ToArray() };
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+
+
         private void importDataBtn_Click(object sender, EventArgs e)
         {
-            importDataDialog.Filter = "Excel|*.csv|Data Files|*.lda";
-            //"Text files (*.txt)|*.txt|All files (*.*)|*.*"'
+            importDataDialog.FileName = "";
+            importDataDialog.Filter = "CSV Files|*.csv";
+            importDataDialog.InitialDirectory = @"C:\Users\Simon\Documents\SaveDataRRA";
             importDataDialog.ShowDialog();
-            importDataDialog.Title = "Select a Text File";
+
+            if (!string.IsNullOrEmpty(importDataDialog.FileName))
+            {
+                string filePath = importDataDialog.FileName;
+                
+                double[][] importedData = ReadXYZDataFromCSV(filePath);
+
+                if (importedData != null && importedData.Length == 3)
+                {
+                    double[] importedXData = importedData[0];
+                    double[] importedYData = importedData[1];
+                    double[] importedZData = importedData[2];
+
+                    Console.WriteLine("Data loaded successfully!");
+
+                    Console.WriteLine("importedXData values:");
+                    foreach (var value in importedXData)
+                    {
+                        Console.WriteLine(value);
+                    }
+
+                    Console.WriteLine("importedYData values:");
+                    foreach (var value in importedYData)
+                    {
+                        Console.WriteLine(value);
+                    }
+
+                    Console.WriteLine("importedZData values:");
+                    foreach (var value in importedZData)
+                    {
+                        Console.WriteLine(value);
+                    }
+
+                    Plot plotForm = new Plot();
+                    plotForm.SetData(importedXData, importedYData, importedZData);
+                    loadform(plotForm);
+                }
+                else
+                {
+                    Console.WriteLine("Nothing Here at the first time");
+                }
+            }
         }
 
 
