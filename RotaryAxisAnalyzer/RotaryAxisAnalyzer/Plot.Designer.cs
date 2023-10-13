@@ -39,9 +39,6 @@
             this.iconText2 = new System.Windows.Forms.TextBox();
             this.pd1 = new RotaryAxisAnalyzer.PanelDecoration();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.testTitle = new System.Windows.Forms.Label();
-            this.opt = new System.Windows.Forms.Label();
-            this.note = new System.Windows.Forms.Label();
             this.oscTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,7 +65,6 @@
             this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pd1.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
             this.oscTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -225,54 +221,19 @@
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel10.Controls.Add(this.testTitle, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.opt, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.note, 0, 2);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(103, 55);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.Padding = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel10.RowCount = 3;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(917, 243);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1150, 512);
             this.tableLayoutPanel10.TabIndex = 0;
-            // 
-            // testTitle
-            // 
-            this.testTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.testTitle.AutoSize = true;
-            this.testTitle.Location = new System.Drawing.Point(3, 0);
-            this.testTitle.Name = "testTitle";
-            this.testTitle.Size = new System.Drawing.Size(47, 50);
-            this.testTitle.TabIndex = 0;
-            this.testTitle.Text = "Test title";
-            this.testTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // opt
-            // 
-            this.opt.AutoSize = true;
-            this.opt.Dock = System.Windows.Forms.DockStyle.Left;
-            this.opt.Location = new System.Drawing.Point(3, 50);
-            this.opt.Name = "opt";
-            this.opt.Size = new System.Drawing.Size(48, 50);
-            this.opt.TabIndex = 1;
-            this.opt.Text = "Operator";
-            this.opt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // note
-            // 
-            this.note.AutoSize = true;
-            this.note.Dock = System.Windows.Forms.DockStyle.Left;
-            this.note.Location = new System.Drawing.Point(13, 100);
-            this.note.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
-            this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(30, 143);
-            this.note.TabIndex = 2;
-            this.note.Text = "Note";
             // 
             // oscTab
             // 
@@ -538,8 +499,6 @@
             this.tableLayoutPanel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pd1.ResumeLayout(false);
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
             this.oscTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -584,8 +543,5 @@
         private System.Windows.Forms.TextBox iconText2;
         private PanelDecoration pd1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Label testTitle;
-        private System.Windows.Forms.Label opt;
-        private System.Windows.Forms.Label note;
     }
 }
