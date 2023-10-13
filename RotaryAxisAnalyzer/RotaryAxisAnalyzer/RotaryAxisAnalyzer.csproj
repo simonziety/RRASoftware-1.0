@@ -170,5 +170,8 @@
   <ItemGroup>
     <None Include="Resources\attocube_logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

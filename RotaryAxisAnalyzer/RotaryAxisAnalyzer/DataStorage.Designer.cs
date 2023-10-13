@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataStorage));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,10 +52,17 @@
             this.axis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.importDBbtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataStorageTable)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -68,7 +77,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1400, 610);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1024, 515);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -77,6 +86,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataStorageTable, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 20);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(20);
@@ -85,7 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.66666F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333332F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1360, 570);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 475);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -115,7 +125,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1354, 44);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(978, 44);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // input_testTitle
@@ -125,7 +135,7 @@
             this.input_testTitle.Location = new System.Drawing.Point(3, 25);
             this.input_testTitle.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.input_testTitle.Name = "input_testTitle";
-            this.input_testTitle.Size = new System.Drawing.Size(212, 20);
+            this.input_testTitle.Size = new System.Drawing.Size(149, 20);
             this.input_testTitle.TabIndex = 0;
             // 
             // label1
@@ -135,7 +145,7 @@
             this.label1.ForeColor = System.Drawing.Color.Snow;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 22);
+            this.label1.Size = new System.Drawing.Size(156, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Test Title";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,9 +154,9 @@
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(228, 0);
+            this.label2.Location = new System.Drawing.Point(165, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 22);
+            this.label2.Size = new System.Drawing.Size(156, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Operator";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,9 +165,9 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(453, 0);
+            this.label3.Location = new System.Drawing.Point(327, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 22);
+            this.label3.Size = new System.Drawing.Size(156, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Axis";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,9 +176,9 @@
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.ForeColor = System.Drawing.Color.Snow;
-            this.label4.Location = new System.Drawing.Point(678, 0);
+            this.label4.Location = new System.Drawing.Point(489, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 22);
+            this.label4.Size = new System.Drawing.Size(156, 22);
             this.label4.TabIndex = 4;
             this.label4.Text = "Machine Name";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -177,40 +187,40 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(228, 25);
+            this.textBox1.Location = new System.Drawing.Point(165, 25);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 20);
+            this.textBox1.Size = new System.Drawing.Size(149, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(453, 25);
+            this.textBox2.Location = new System.Drawing.Point(327, 25);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 20);
+            this.textBox2.Size = new System.Drawing.Size(149, 20);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(678, 25);
+            this.textBox3.Location = new System.Drawing.Point(489, 25);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 20);
+            this.textBox3.Size = new System.Drawing.Size(149, 20);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(903, 25);
+            this.textBox4.Location = new System.Drawing.Point(651, 25);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(212, 20);
+            this.textBox4.Size = new System.Drawing.Size(149, 20);
             this.textBox4.TabIndex = 8;
             // 
             // dateTimePicker1
@@ -218,19 +228,19 @@
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1128, 25);
+            this.dateTimePicker1.Location = new System.Drawing.Point(813, 25);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(155, 20);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.ForeColor = System.Drawing.Color.Snow;
-            this.label5.Location = new System.Drawing.Point(903, 0);
+            this.label5.Location = new System.Drawing.Point(651, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 22);
+            this.label5.Size = new System.Drawing.Size(156, 22);
             this.label5.TabIndex = 10;
             this.label5.Text = "Machine Serial Number";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,9 +249,9 @@
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.ForeColor = System.Drawing.Color.Snow;
-            this.label6.Location = new System.Drawing.Point(1128, 0);
+            this.label6.Location = new System.Drawing.Point(813, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(223, 22);
+            this.label6.Size = new System.Drawing.Size(162, 22);
             this.label6.TabIndex = 11;
             this.label6.Text = "Date";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,7 +270,7 @@
             this.dataStorageTable.Location = new System.Drawing.Point(8, 58);
             this.dataStorageTable.Margin = new System.Windows.Forms.Padding(8);
             this.dataStorageTable.Name = "dataStorageTable";
-            this.dataStorageTable.Size = new System.Drawing.Size(1344, 460);
+            this.dataStorageTable.Size = new System.Drawing.Size(968, 373);
             this.dataStorageTable.TabIndex = 1;
             // 
             // testTitle
@@ -303,12 +313,103 @@
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.Controls.Add(this.exportBtn, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.importDBbtn, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.deleteBtn, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.refreshBtn, 4, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 439);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(984, 36);
+            this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "file-export.png");
+            this.imageList1.Images.SetKeyName(1, "import (1).png");
+            this.imageList1.Images.SetKeyName(2, "trash.png");
+            this.imageList1.Images.SetKeyName(3, "circular-arrow (1).png");
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.exportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exportBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.ImageIndex = 0;
+            this.exportBtn.ImageList = this.imageList1;
+            this.exportBtn.Location = new System.Drawing.Point(747, 0);
+            this.exportBtn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(54, 36);
+            this.exportBtn.TabIndex = 4;
+            this.exportBtn.UseVisualStyleBackColor = false;
+            // 
+            // importDBbtn
+            // 
+            this.importDBbtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.importDBbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.importDBbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.importDBbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.importDBbtn.ImageIndex = 1;
+            this.importDBbtn.ImageList = this.imageList1;
+            this.importDBbtn.Location = new System.Drawing.Point(807, 0);
+            this.importDBbtn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.importDBbtn.Name = "importDBbtn";
+            this.importDBbtn.Size = new System.Drawing.Size(54, 36);
+            this.importDBbtn.TabIndex = 5;
+            this.importDBbtn.UseVisualStyleBackColor = false;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteBtn.ImageIndex = 2;
+            this.deleteBtn.ImageList = this.imageList1;
+            this.deleteBtn.Location = new System.Drawing.Point(867, 0);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(54, 36);
+            this.deleteBtn.TabIndex = 6;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.refreshBtn.ImageIndex = 3;
+            this.refreshBtn.ImageList = this.imageList1;
+            this.refreshBtn.Location = new System.Drawing.Point(927, 0);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(54, 36);
+            this.refreshBtn.TabIndex = 7;
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            // 
             // DataStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.ClientSize = new System.Drawing.Size(1400, 610);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1024, 515);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "DataStorage";
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -316,6 +417,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataStorageTable)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -344,5 +446,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn axis;
         private System.Windows.Forms.DataGridViewTextBoxColumn operatorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button importDBbtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }
